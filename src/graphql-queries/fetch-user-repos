@@ -1,0 +1,17 @@
+query($username:String!)
+{
+  user(login: $username) {
+    name
+    repositories(last: 20) {
+      totalCount
+      pageInfo {
+        hasNextPage
+      }
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+}
